@@ -115,8 +115,14 @@ function App() {
     } else {
       setFeedback(`❌ 惜しい！正解は「${currentQ.answer}」です`);
       setTimeout(() => {
-        setFeedback('');
-      }, 2000);
+        if (currentIndex < questions.length - 1) {
+          setCurrentIndex(currentIndex + 1);
+          setUserAnswer('');
+          setFeedback('');
+        } else {
+          setFeedback(`全問終了！スコア: ${score}/${questions.length}`);
+        }
+      }, 2500);
     }
   };
 
@@ -249,11 +255,11 @@ function App() {
                       placeholder="答えを入力..."
                       className="flex-1 px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ed2127] focus:border-transparent"
                       style={{ borderRadius: '8px' }}
-                      disabled={feedback.includes('正解')}
+                      disabled={feedback !== ''}
                     />
                     <button
                       onClick={handleAnswer}
-                      disabled={!userAnswer.trim() || feedback.includes('正解')}
+                      disabled={!userAnswer.trim() || feedback !== ''}
                       className="bg-gradient-to-r from-[#ed2127] to-[#f6b243] hover:from-[#d91d23] hover:to-[#e5a239] text-white font-bold py-2 px-6 transition duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-md transform hover:scale-105"
                       style={{ borderRadius: '8px' }}
                     >
