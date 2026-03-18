@@ -1,0 +1,46 @@
+# React 基礎学習ガイド
+
+## React Hooksとは
+
+React Hooksは、React 16.8で導入された機能です。関数コンポーネントでもstate（状態）やライフサイクルなどの機能を使えるようにするものです。
+
+### useState Hook
+
+useStateは、コンポーネントに状態を追加するためのHookです。配列の分割代入を使って、現在の状態値と、それを更新する関数を取得します。
+
+例：
+```javascript
+const [count, setCount] = useState(0);
+```
+
+### useEffect Hook
+
+useEffectは、副作用を実行するためのHookです。データの取得、購読の設定、DOMの手動での変更などに使います。
+
+### カスタムHook
+
+独自のHookを作成することもできます。ロジックを再利用可能にするための強力な方法です。
+
+## JavaScript 非同期処理
+
+### async/await
+
+async/awaitは、ES2017で導入された構文で、Promiseをより読みやすく書くことができます。async関数は必ずPromiseを返し、await式はPromiseの解決を待ちます。
+
+### Promise
+
+Promiseは非同期処理を扱うためのオブジェクトです。then()メソッドでチェーンし、catch()でエラーをハンドリングします。
+
+## CSS フレームワーク
+
+### Tailwind CSS
+
+Tailwind CSSは、ユーティリティファーストのCSSフレームワークです。既存のクラス名を組み合わせてUIを構築します。カスタマイズ性が高く、パージ機能で未使用のスタイルを削除できます。
+
+### レスポンシブデザイン
+
+Tailwindでは、sm:、md:、lg:などのプレフィックスを使って、簡単にレスポンシブデザインを実装できます。
+
+## Vite
+
+Viteは、次世代のフロントエンドビルドツールです。ESモジュールを利用した高速な開発サーバーと、本番用の最適化されたビルドを提供します。従来のバンドラーよりも起動が速く、HMR（Hot Module Replacement）も高速です。
